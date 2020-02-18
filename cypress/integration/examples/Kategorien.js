@@ -1,25 +1,31 @@
 describe('Kategorien functionality', function() {
 	let rand = Math.floor(Math.random() * 10)
 	let testtext = '+ automated test' + rand
-
-    it('edits a main category', function() {
-		
-        cy.visit('https://staging.sparwelt.de/admin/login',{
+	const admin = Cypress.env('admin')
+    const admin_password = Cypress.env('admin_password')
+    const user = Cypress.env('user')
+    const user_password = Cypress.env('user_password')
+	beforeEach(function() {
+		cy.visit('https://staging.sparwelt.de/admin/login',{
             auth: {
-                username: 'admin12',
-                password: 's4QPDhH2VqBe'
+                username: admin,
+                password: admin_password
             }
         })
-        cy.get('input#username.form-control').type('PhilippH')
-        cy.get('input#password.form-control').type('Ppu1+aph=WPR')
+        cy.get('input#username.form-control').type(user)
+        cy.get('input#password.form-control').type(user_password)
         cy.contains('Sign In').click()
-		
+
+	})
+
+    it('edits a main category', function() {
+			
 		
 		
         cy.visit('https://staging.sparwelt.de/admin/econa/taxonomy/maincategory/list',{
             auth: {
-                username: 'admin12',
-                password: 's4QPDhH2VqBe'
+                username: admin,
+                password: admin_password
             }
         })
 		cy.get(':nth-child(1) > .sonata-ba-list-field-text > .sonata-link-identifier').click({force: true})
@@ -32,21 +38,11 @@ describe('Kategorien functionality', function() {
     
 	it('creates a subcategory', function() {
 		
-		/*Login*/
-        cy.visit('https://staging.sparwelt.de/admin/login',{
-            auth: {
-                username: 'admin12',
-                password: 's4QPDhH2VqBe'
-            }
-        })
-        cy.get('input#username.form-control').type('PhilippH')
-        cy.get('input#password.form-control').type('Ppu1+aph=WPR')
-        cy.contains('Sign In').click()
 		
         cy.visit('https://staging.sparwelt.de/admin/econa/taxonomy/subcategory/list',{
             auth: {
-                username: 'admin12',
-                password: 's4QPDhH2VqBe'
+                username: admin,
+                password: admin_password
             }
         })
 		cy.get('.sonata-action-element').click()
@@ -67,20 +63,10 @@ describe('Kategorien functionality', function() {
 
 	it('edits a subcategory', function() {
 		
-        cy.visit('https://staging.sparwelt.de/admin/login',{
-            auth: {
-                username: 'admin12',
-                password: 's4QPDhH2VqBe'
-            }
-        })
-        cy.get('input#username.form-control').type('PhilippH')
-        cy.get('input#password.form-control').type('Ppu1+aph=WPR')
-        cy.contains('Sign In').click()
-
         cy.visit('https://staging.sparwelt.de/admin/econa/taxonomy/subcategory/list',{
             auth: {
-                username: 'admin12',
-                password: 's4QPDhH2VqBe'
+                username: admin,
+                password: admin_password
             }
         })
 		cy.get(':nth-child(1) > .sonata-ba-list-field-text > .sonata-link-identifier').click({force: true})

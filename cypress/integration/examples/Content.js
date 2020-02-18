@@ -27,7 +27,8 @@ describe('Content functionality', function() {
 		cy.visit('https://staging.sparwelt.de/admin/econa/app/generalarticle/list?contenttype=silentArticle',{
             auth: {
                 username: admin,
-                password: admin_password
+				password: admin_password
+			}
         })
 		
 		cy.get(':nth-child(1) > :nth-child(2) > .sonata-link-identifier').click()
@@ -44,7 +45,8 @@ describe('Content functionality', function() {
         cy.visit('https://staging.sparwelt.de/admin/econa/app/nodecluster/create',{
             auth: {
                 username: admin,
-                password: admin_password
+				password: admin_password
+			}
         })
 		cy.get('.form-control').eq(0).type('automated test' + rand, {force: true})
 		cy.get('.form-control').eq(1).type('automated test' + rand, {force: true})
@@ -65,7 +67,8 @@ describe('Content functionality', function() {
 		cy.visit('https://staging.sparwelt.de/admin/econa/app/aggregationconfiguration/list',{
             auth: {
                 username: admin,
-                password: admin_password
+				password: admin_password
+			}
         })
 		cy.get(':nth-child(11) > .sonata-ba-list-field-text > .sonata-link-identifier').click()
 		
@@ -82,7 +85,8 @@ describe('Content functionality', function() {
         cy.visit('https://staging.sparwelt.de/admin/econa/app/generalarticle/list?contenttype=freebieArticle',{
             auth: {
                 username: admin,
-                password: admin_password
+				password: admin_password
+			}
         })
 		cy.get(':nth-child(1) > :nth-child(2) > .sonata-link-identifier').click()
 		cy.get('#select2-chosen-7').click({force: true})
@@ -101,7 +105,8 @@ describe('Content functionality', function() {
         cy.visit('https://staging.sparwelt.de/admin/econa/app/generalarticle/list?contenttype=bargainArticle',{
             auth: {
                 username: admin,
-                password: admin_password
+				password: admin_password
+			}
         })
 		cy.get(':nth-child(1) > :nth-child(2) > .sonata-link-identifier').click()
 		cy.get('#select2-chosen-7').click({force: true})
