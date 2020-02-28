@@ -54,10 +54,7 @@ describe('Partner functionality', function() {
 		cy.get('[name="btn_create_and_list"]').click()
 
 		cy.get('.sonata-link-identifier').contains(partner).click()
-		cy.get('#mceu_49-open > .mce-txt').click({force: true})
-		cy.get('#mceu_68').click({force: true})
-		cy.get('#mceu_71').type(' + Edit', {force: true})
-		cy.get('#mceu_73 > button').click({force: true})
+		cy.get('.form-control').eq(0).type(' + Edit', {force: true})
 		cy.get('[name="btn_update_and_edit"]').click()
 		cy.get('.alert').contains('wurde erfolgreich bearbeitet.')
 		cy.contains('Edit')
