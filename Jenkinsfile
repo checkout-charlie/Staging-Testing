@@ -36,7 +36,7 @@ pipeline {
         container(name: 'cypress') {
         sh 'npm install'
         sh 'npm ci'
-        sh "npm run cypress:ci"
+        sh "npm run"
 
         }  
       }
