@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm start & cypress run"
-    "cy:verify": "cypress verify",
+    "test": "npm start & cypress run",
+    "cy:verify": "cypress verify"
   },
   "author": "",
   "license": "ISC",
