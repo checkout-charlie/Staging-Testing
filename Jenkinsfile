@@ -19,14 +19,6 @@ pipeline {
   
        }
     }
-/*pipeline {
-  agent {
-    // this image provides everything needed to run Cypress
-    docker {
-      image 'cypress/base:10'
-    }
-  }*/
-
 
   environment {
         // we will be recording test results and video on Cypress dashboard
