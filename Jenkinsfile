@@ -1,4 +1,4 @@
-def podlabel = "jenkins-builder.${env.JOB_NAME.replace('%2F','_').reverse().take(38).reverse()}.${env.BUILD_NUMBER}".replace('-', '_').replace('/', '_')
+/*def podlabel = "jenkins-builder.${env.JOB_NAME.replace('%2F','_').reverse().take(38).reverse()}.${env.BUILD_NUMBER}".replace('-', '_').replace('/', '_')
 pipeline {
   agent {
       
@@ -18,7 +18,15 @@ pipeline {
           """
   
        }
+    }*/
+pipeline {
+  agent {
+    // this image provides everything needed to run Cypress
+    docker {
+      image 'cypress/base:10'
     }
+  }
+
 
   environment {
         // we will be recording test results and video on Cypress dashboard
@@ -36,7 +44,7 @@ pipeline {
         container(name: 'cypress') {
         sh 'npm install'
         sh 'npm ci'
-        sh "npm run"
+        sh "npm run test"
 
         }  
       }
