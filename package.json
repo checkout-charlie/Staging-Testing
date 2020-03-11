@@ -11,10 +11,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cypress": "^4.1.0",
+    "cypress-dotenv": "^1.1.1",
     "cypress-file-upload": "^3.5.3"
   },
   "dependencies": {
-    "cypress": "^4.0.1",
     "dotenv": "^8.2.0"
   }
 }

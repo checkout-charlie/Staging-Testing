@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 describe('Redationsempfehlungen functionality', function() {
     const admin = Cypress.env('admin')
     const admin_password = Cypress.env('admin_password')

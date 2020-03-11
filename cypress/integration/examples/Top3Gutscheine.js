@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 describe('Top 3 Gutscheine functionality', function() {
 	let cacheLoad = Math.random().toString(36).substr(2, 5)
 	let rand2 = Math.floor(Math.random() * 100)

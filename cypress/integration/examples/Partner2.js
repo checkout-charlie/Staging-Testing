@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 describe('Partner functionality continued', function() {
 	let rand = Math.floor(Math.random() * 100)
 	let partner = "Testpartner " + rand

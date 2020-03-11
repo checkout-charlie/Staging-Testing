@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 describe('Responsive Slider functionality', function() {
 
 	let rand = Math.floor(Math.random() * 100)
