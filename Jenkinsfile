@@ -26,6 +26,11 @@ pipeline {
         // we can load the record key variable from credentials store
         // see https://jenkins.io/doc/book/using/using-credentials/
         CYPRESS_RECORD_KEY = credentials('CYPRESS_RECORD_KEY')
+        CYPRESS_ADMIN = credentials('CYPRESS_ADMIN')
+        CYPRESS_ADMIN_PASSWORD = credentials('CYPRESS_ADMIN_PASSWORD')
+        CYPRESS_USER = credentials('CYPRESS_USER')
+        CYPRESS_USER_PASSWORD = credentials('CYPRESS_USER_PASSWORD')
+
   }
 
   stages {
