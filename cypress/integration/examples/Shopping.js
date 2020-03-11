@@ -1,10 +1,13 @@
 describe('Shopping functionality', function() {
-
-    const admin = Cypress.env('admin')
+	const admin = Cypress.env('admin')
     const admin_password = Cypress.env('admin_password')
     const user = Cypress.env('user')
     const user_password = Cypress.env('user_password')
+
     beforeEach(function() {
+        console.log(Cypress.env())
+        console.log("variable: ", admin, admin_password, user, user_password)
+
         cy.visit('https://staging.sparwelt.de/admin/login',{
             auth: {
                 username: admin,
@@ -17,9 +20,8 @@ describe('Shopping functionality', function() {
 
     })
     it('test Shopping links', function() {
-	
-            
-		
+        
+
 		cy.visit('https://staging.sparwelt.de/admin/econa/offer/deal/list',{
             auth: {
                 username: admin,

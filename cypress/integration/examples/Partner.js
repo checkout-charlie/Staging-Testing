@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 describe('Partner functionality', function() {
 	
 	let rand = Math.floor(Math.random() * 100)

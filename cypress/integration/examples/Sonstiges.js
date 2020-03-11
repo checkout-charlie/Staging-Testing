@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 describe('Sonstiges functionality', function() {
 	
 	let rand = Math.floor(Math.random() * 100)
@@ -24,20 +26,20 @@ describe('Sonstiges functionality', function() {
 		
 		cy.visit('https://staging.sparwelt.de/admin/econa/marketing/media/list?campaign=marketing_media.editors_lp',{
             auth: {
-                username: 'admin12',
-                password: 's4QPDhH2VqBe'
+                username: admin,
+                password: admin_password
             }
 		})
 		cy.visit('https://staging.sparwelt.de/admin/econa/marketing/media/list?campaign=marketing_media.sem_lp',{
             auth: {
-                username: 'admin12',
-                password: 's4QPDhH2VqBe'
+                username: admin,
+                password: admin_password
             }
 		})	
 		cy.visit('https://staging.sparwelt.de/admin/econa/marketing/media/list?campaign=marketing_media.single_optin_lp',{
             auth: {
-                username: 'admin12',
-                password: 's4QPDhH2VqBe'
+                username: admin,
+                password: admin_password
             }
 		})		
 	
@@ -47,8 +49,8 @@ describe('Sonstiges functionality', function() {
 				
         cy.visit('https://staging.sparwelt.de/admin/econa/marketing/campaign/create?campaign=marketing_campaign.editors_lp',{
             auth: {
-                username: 'admin12',
-                password: 's4QPDhH2VqBe'
+                username: admin,
+                password: admin_password
             }
         })
 		cy.get('.form-control').first().type(testtext, {force: true})
@@ -71,8 +73,8 @@ describe('Sonstiges functionality', function() {
 	
         cy.visit('https://staging.sparwelt.de/admin/econa/marketing/campaign/create?campaign=marketing_campaign.sem_lp',{
             auth: {
-                username: 'admin12',
-                password: 's4QPDhH2VqBe'
+                username: admin,
+                password: admin_password
             }
         })
 		cy.get('.form-control').first().type(testtext, {force: true})

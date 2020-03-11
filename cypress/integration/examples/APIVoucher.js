@@ -1,8 +1,10 @@
+require('dotenv').config()
+
 describe('API voucher functionality', function() {
 	let rand = Math.floor(Math.random() * 100)
 	const admin = Cypress.env('admin')
     const admin_password = Cypress.env('admin_password')
-    const user = Cypress.env('user')
+    const user_password = Cypress.env('user')
     const user_password = Cypress.env('user_password')
 	beforeEach(function() {
 		cy.visit('https://staging.sparwelt.de/admin/login',{

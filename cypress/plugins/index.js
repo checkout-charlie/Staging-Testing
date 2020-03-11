@@ -15,13 +15,8 @@
 /**
  * @type {Cypress.PluginConfig}
  */
+const dotenvPlugin = require('cypress-dotenv');
 module.exports = (on, config) => {
-  return Object.assign({}, config, {
-    env: {
-      admin: process.env.admin,
-      admin_password: process.env.admin_password,
-      user: process.env.user,
-      user_password: process.env.user_password,
-    }
-  })
+  config = dotenvPlugin(config)
+  return config
 }

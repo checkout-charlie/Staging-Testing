@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 describe('Voucher functionality', function() {
 	let rand = Math.floor(Math.random() * 100)
     const admin = Cypress.env('admin')
