@@ -4,10 +4,10 @@ describe('Shop functionality', function() {
 	let rand = Math.floor(Math.random() * 100)
 	let cacheLoad = Math.random().toString(36).substr(2, 5)
 
-	const admin = Cypress.env('admin')
-    const admin_password = Cypress.env('admin_password')
-    const user = Cypress.env('user')
-    const user_password = Cypress.env('user_password')
+    const admin = Cypress.env('ADMIN')
+    const admin_password = Cypress.env('ADMIN_PASSWORD')
+    const user = Cypress.env('USER')
+    const user_password = Cypress.env('USER_PASSWORD')
 	beforeEach(function() {
 		cy.visit('https://staging.sparwelt.de/admin/login',{
             auth: {
