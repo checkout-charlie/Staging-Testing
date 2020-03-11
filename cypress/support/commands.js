@@ -24,3 +24,17 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 import 'cypress-file-upload';
+const { isPlainObject, last } = Cypress._
+
+Cypress.Commands.add('waitForResource', (...args) => {
+    let names
+    let options
+  
+    if (isPlainObject(last(args))) {
+      names = args.slice(0, args.length - 1)
+      options = last(args)
+    } else {
+      names = args
+      options = {}
+    }
+})

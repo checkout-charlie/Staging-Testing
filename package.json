@@ -9,13 +9,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cypress": "^4.1.0",
+    "cypress-dotenv": "^1.1.1",
     "cypress-file-upload": "^3.5.3"
   },
   "dependencies": {
-    "consola": "^2.11.3",
-    "cypress": "^4.0.1",
-    "dotenv": "^8.2.0",
-    "puppeteer": "^2.1.1",
-    "selenium-webdriver": "^4.0.0-alpha.5"
+    "dotenv": "^8.2.0"
   }
 }

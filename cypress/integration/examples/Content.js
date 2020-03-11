@@ -1,3 +1,4 @@
+require('dotenv').config()
 
 describe('Content functionality', function() {
 

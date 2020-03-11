@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 describe('Shop functionality', function() {
 	let rand = Math.floor(Math.random() * 100)
 	let cacheLoad = Math.random().toString(36).substr(2, 5)

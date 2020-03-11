@@ -1,5 +1,7 @@
+require('dotenv').config()
+
 describe('Kategorien functionality', function() {
-	let rand = Math.floor(Math.random() * 10)
+	let rand = Math.floor(Math.random() * 100)
 	let testtext = '+ automated test' + rand
 	const admin = Cypress.env('admin')
     const admin_password = Cypress.env('admin_password')
@@ -47,7 +49,7 @@ describe('Kategorien functionality', function() {
         })
 		cy.get('.sonata-action-element').click()
 		cy.get('.form-control').first().type('neue subkategorie ' + rand, {force: true})
-		cy.get('.form-control').eq(4).clear({force: true})
+		cy.get('.form-control').eq(4).type('url'+ rand, {force: true})
 		cy.get('#select2-chosen-3').click({force: true})
 		cy.get('#select2-result-label-7').click({force: true})
 
