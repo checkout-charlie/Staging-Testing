@@ -16,6 +16,12 @@
  * @type {Cypress.PluginConfig}
  */
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
+  return Object.assign({}, config, {
+    env: {
+      admin: process.env.admin,
+      admin_password: process.env.admin_password,
+      user: process.env.user,
+      user_password: process.env.user_password,
+    }
+  })
 }

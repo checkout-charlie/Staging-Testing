@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm start & cypress run",
+    "cy:verify": "cypress verify",
+    "cy:run": "cypress run"
   },
   "author": "",
   "license": "ISC",
@@ -12,10 +14,7 @@
     "cypress-file-upload": "^3.5.3"
   },
   "dependencies": {
-    "consola": "^2.11.3",
     "cypress": "^4.0.1",
-    "dotenv": "^8.2.0",
-    "puppeteer": "^2.1.1",
-    "selenium-webdriver": "^4.0.0-alpha.5"
+    "dotenv": "^8.2.0"
   }
 }
