@@ -19,56 +19,6 @@ describe('Voucher functionality', function() {
 
     })
 
-    /*it('tests less important links', function() {
-        cy.visit('https://staging.sparwelt.de/admin/login',{
-            auth: {
-                username: admin,
-                password: admin_password
-            }
-        })
-        cy.get('input#username.form-control').type('PhilippH')
-        cy.get('input#password.form-control').type('Ppu1+aph=WPR')
-		cy.contains('Sign In').click()
-		
-		cy.visit('https://staging.sparwelt.de/admin/econa/taxonomy/sellingfeature/list',{
-            auth: {
-                username: admin,
-                password: admin_password
-            }
-        })
-		cy.get(':nth-child(1) > .sonata-ba-list-field-text > .sonata-link-identifier').click({force: true})
-
-		cy.visit('https://staging.sparwelt.de/admin/econa/provider/affiliateprogram/list',{
-            auth: {
-                username: admin,
-                password: admin_password
-            }
-        })
-		cy.get(':nth-child(1) > :nth-child(1) > .sonata-link-identifier').click({force: true})
-
-		cy.visit('https://staging.sparwelt.de/admin/econa/provider/pseudoshop/list',{
-            auth: {
-                username: admin,
-                password: admin_password
-            }
-        })
-		cy.get(':nth-child(1) > :nth-child(2) > .sonata-link-identifier').click({force: true})
-
-		cy.visit('https://staging.sparwelt.de/admin/econa/provider/shoppingshop/top',{
-            auth: {
-                username: admin,
-                password: admin_password
-            }
-		})
-		
-		cy.visit('https://staging.sparwelt.de/admin/econa/provider/shoppingshop/resubmission/list',{
-            auth: {
-                username: admin,
-                password: admin_password
-            }
-        })
-		cy.get(':nth-child(1) > .sonata-ba-list-field-text > .sonata-link-identifier').click({force: true})
-	})*/
 	
 	it('creates and edits a voucher', function() {
 

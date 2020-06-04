@@ -1,4 +1,5 @@
 {
   "projectId": "wnvxsm",
-  "video": false
+  "video": false,
+  "chromeWebSecurity": false
 }

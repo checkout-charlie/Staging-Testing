@@ -23,16 +23,14 @@ describe('Responsive Slider functionality', function() {
 
     it('creates a new item in the main page slider', function() {
 		
-
         cy.visit('https://staging.sparwelt.de/admin/econa/promotion/responsiveslider/2976/edit',{
             auth: {
                 username: admin,
                 password: admin_password
             }
-        })
+        }, 120000)
 
 		cy.get('.icon-plus').click({force: true})
-		cy.wait(3000)
 		cy.get('.modal-body').within(() => {
 			cy.get('.select2-chosen').eq(0).click({force: true})
 		})
@@ -50,7 +48,6 @@ describe('Responsive Slider functionality', function() {
 			cy.get('.btn').eq(2).click({force: true})
 
 		})
-		cy.wait(5000)
 	})
 
 	it('tests if the item is displayed', function () {

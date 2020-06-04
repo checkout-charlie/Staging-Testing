@@ -30,7 +30,7 @@ describe('Category Slider functionality', function() {
             }
 		})
 		cy.get('.icon-plus').click({force: true})
-		cy.wait(3000)
+		//cy.wait(3000)
 		//const runout = ['Entwurf', 'Veröffentlichen']
 		//const regex = new RegExp(`${runout.join('|')}`, 'g')
 

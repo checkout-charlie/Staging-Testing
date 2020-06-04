@@ -69,7 +69,7 @@ describe('Partner functionality', function() {
             }
         })
 
-			cy.get(':nth-child(1) > :nth-child(2) > .sonata-link-identifier').click()
+		cy.get(':nth-child(1) > :nth-child(2) > .sonata-link-identifier').click()
 		cy.get('#mceu_116').click({force: true})
 		cy.get('#mceu_135').click({force: true})
 		cy.get('#mceu_138').type('Langbeschreibung' + rand, {force: true})

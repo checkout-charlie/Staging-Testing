@@ -54,8 +54,6 @@ describe('Kategorien functionality', function() {
 		cy.get('#select2-result-label-7').click({force: true})
 
 		cy.get('[name="btn_create_and_edit"]').click()
-		cy.wait(3000)
-
 		cy.get('.btn-info')
 			.invoke('removeAttr', 'target').click()
 			

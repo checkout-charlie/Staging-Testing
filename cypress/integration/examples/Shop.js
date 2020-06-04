@@ -53,7 +53,6 @@ describe('Shop functionality', function() {
 		cy.get('.form-control').eq(0).type(' + Edit', {force: true})
 		cy.get('[name="btn_update_and_edit"]').click()
 		cy.get('.alert').contains('Edit (de)" wurde erfolgreich bearbeitet.')
-		cy.wait(3000)
 		cy.get('.btn-info').eq(0).invoke('removeAttr', 'target').click()
 		cy.contains('+ Edit')
 	})
@@ -72,12 +71,8 @@ describe('Shop functionality', function() {
 		cy.get('#select2-chosen-3').click({force: true})
 		cy.get('#select2-result-label-20').click({force: true})
 		cy.get('[name="btn_update_and_edit"]').click()
-		cy.wait(5000)
-		cy.request({
-			failOnStatusCode: false,
-			url: 'https://staging.sparwelt.de/gutscheine/automatically-created-testshop?' + cacheLoad}).then((response) => {
-				expect(response.status).to.eq(404)
-			})
+		cy.get('.alert').contains('Edit (de)" wurde erfolgreich bearbeitet.')
+
 	})
     it('deletes a Shop', function() {
 

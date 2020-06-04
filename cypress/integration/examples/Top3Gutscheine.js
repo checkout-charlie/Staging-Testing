@@ -64,7 +64,6 @@ describe('Top 3 Gutscheine functionality', function() {
 			
 		cy.get('.btn').eq(2).click({force: true})
 		})
-		cy.wait(4000)
 	})
 
 

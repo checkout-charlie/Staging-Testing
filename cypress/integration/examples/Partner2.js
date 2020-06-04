@@ -58,7 +58,6 @@ describe('Partner functionality continued', function() {
             }
         })
         cy.get('.icon-plus').click({force: true})
-        cy.wait(3000)
         cy.get('.modal-body').within(() => {
             cy.get('.select2-chosen').eq(1).click({force: true})
         })
@@ -88,7 +87,6 @@ describe('Partner functionality continued', function() {
             }
         })
         cy.get('.icon-plus').click({force: true})
-        cy.wait(3000)
         cy.get('.modal-body').within(() => {
             cy.get('.select2-chosen').eq(1).click({force: true})
         })
