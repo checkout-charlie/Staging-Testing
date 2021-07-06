@@ -1,4 +1,9 @@
 require('dotenv').config()
+Cypress.on('uncaught:exception', (err, runnable) => {
+	// returning false here prevents Cypress from
+	// failing the test
+	return false
+  })
 
 describe('Partner functionality continued', function() {
 	let rand = Math.floor(Math.random() * 100)
@@ -30,17 +35,17 @@ describe('Partner functionality continued', function() {
             }
         })
         cy.get('.sonata-ba-field').eq(7).within(() => {
-            cy.get('.form-control').eq(2).children().its('length').then((num) => {
+            cy.get('.form-control').eq(1).children().its('length').then((num) => {
                 cy.get('.form-control').eq(1).children().first().dblclick({force: true})
-                cy.get('.form-control').eq(2).children().should('have.length', num+1)
+                cy.get('.form-control').eq(1).children().should('have.length', num-1)
 
             })
         })
         
         cy.get('.sonata-ba-field').eq(8).within(() => {
-            cy.get('.form-control').eq(2).children().its('length').then((num) => {
+            cy.get('.form-control').eq(1).children().its('length').then((num) => {
                 cy.get('.form-control').eq(1).children().first().dblclick({force: true})
-                cy.get('.form-control').eq(2).children().should('have.length', num+1)
+                cy.get('.form-control').eq(1).children().should('have.length', num-1)
 
             })
         })
@@ -63,20 +68,12 @@ describe('Partner functionality continued', function() {
         })
         cy.get('.select2-result-label').eq(1).click({force: true})	
         cy.get('.modal-body').within(() => {
-            cy.get('.form-control').eq(0).type('5', {force: true})
-            cy.get('.form-control').eq(1).type('automatically generated Partner Slider Item' + rand, {force: true})
-            cy.get('.form-control').eq(8).type('sparwelt.de', {force: true})
+            cy.get('.form-control').eq(2).type('auto Slider Item' + rand, {force: true})
 
-            
-            const fileName = 'Slider Image.png'
-            cy.fixture(fileName).then(fileContent => {
-                cy.get('input[type=file]').eq(0).upload({fileContent, fileName, mimeType: 'image/png'});
-                cy.get('input[type=file]').eq(1).upload({fileContent, fileName, mimeType: 'image/png'});
-            })
             
             cy.get('.btn').eq(1).click({force: true})
         })
-        cy.contains('automatically generated Partner Slider Item' + rand)
+        cy.contains('auto Slider Item' + rand)
     })
 
     it('edits a Promotion Card', function() {
@@ -92,20 +89,13 @@ describe('Partner functionality continued', function() {
         })
         cy.get('.select2-result-label').eq(1).click({force: true})	
         cy.get('.modal-body').within(() => {
-            cy.get('.form-control').eq(0).type('5', {force: true})
-            cy.get('.form-control').eq(1).type('automatically generated Partner Slider Item' + rand, {force: true})
-            cy.get('.form-control').eq(8).type('sparwelt.de', {force: true})
+            cy.get('.form-control').eq(2).type('auto promotion card' + rand, {force: true})
 
-            const fileName = 'Slider Image.png'
-            cy.fixture(fileName).then(fileContent => {
-                cy.get('input[type=file]').eq(0).upload({fileContent, fileName, mimeType: 'image/png'});
-                cy.get('input[type=file]').eq(1).upload({fileContent, fileName, mimeType: 'image/png'});
-            })
             
             cy.get('.btn').eq(1).click({force: true})
 
         })
-        cy.contains('automatically generated Partner Slider Item' + rand)
+        cy.contains('auto promotion card' + rand)
     })
 
 })

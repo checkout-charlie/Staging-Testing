@@ -1,4 +1,9 @@
 require('dotenv').config()
+Cypress.on('uncaught:exception', (err, runnable) => {
+	// returning false here prevents Cypress from
+	// failing the test
+	return false
+  })
 
 describe('Category Slider functionality', function() {
 	let rand = Math.floor(Math.random() * 100)

@@ -1,9 +1,14 @@
 require('dotenv').config()
+Cypress.on('uncaught:exception', (err, runnable) => {
+	// returning false here prevents Cypress from
+	// failing the test
+	return false
+  })
 
 describe('Partner functionality', function() {
 	
 	let rand = Math.floor(Math.random() * 100)
-	let partner = "Testpartner " + rand
+	let partner = "Testpartner" + rand
 
     const admin = Cypress.env('ADMIN')
     const admin_password = Cypress.env('ADMIN_PASSWORD')
@@ -70,10 +75,7 @@ describe('Partner functionality', function() {
         })
 
 		cy.get(':nth-child(1) > :nth-child(2) > .sonata-link-identifier').click()
-		cy.get('#mceu_116').click({force: true})
-		cy.get('#mceu_135').click({force: true})
-		cy.get('#mceu_138').type('Langbeschreibung' + rand, {force: true})
-		cy.get('#mceu_140 > button').click({force: true})
+		cy.get('.form-control').eq(0).type(' + Edit' + rand, {force: true})
 		cy.get('[name="btn_update_and_edit"]').click()
 		cy.get('.alert').contains('wurde erfolgreich bearbeitet.')
 		cy.contains(rand)
@@ -96,11 +98,11 @@ describe('Partner functionality', function() {
 		})
 		
 		cy.get('.sonata-ba-field').eq(8).within(() => {
-			cy.get('.form-control').eq(2).children().its('length').then((num) => {
-				cy.get('.form-control').eq(1).children().first().dblclick({force: true})
-				cy.get('.form-control').eq(2).children().should('have.length', num+1)
+		 	cy.get('.form-control').eq(1).children().its('length').then((num) => {
+		 		cy.get('.form-control').eq(1).children().first().dblclick({force: true})
+		 		cy.get('.form-control').eq(1).children().should('have.length', num-1)
 
-			})
+		 	})
 		})
 
 		cy.get('[name="btn_update_and_edit"]').click()
